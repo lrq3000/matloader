@@ -286,6 +286,7 @@ class MatFile5Reader(MatFileReader):
                 else:
                     flags, nzmax = flags
                 dims, name = islice(reader, 2)
+                dims = tuple(dims)
                 name, = self._as_identifiers(name) or [""]
                 matrix_cls = flags % 0x100
                 f_complex = flags & complex_pattern
